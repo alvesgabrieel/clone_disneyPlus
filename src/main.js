@@ -1,3 +1,5 @@
+//Lógica p/ mudar os titulos sessao 'shows'
+
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('[data-tab-button]');
 
