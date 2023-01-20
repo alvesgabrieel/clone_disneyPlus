@@ -1,0 +1,76 @@
+@use 'variaveis';
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: variaveis.$corDeFundo;
+    transition: background-color .5s ease;
+    z-index: 1;
+
+    &--is-hidden{
+        background-color: transparent;
+        transition: background-color .5s ease;
+
+        .header{
+
+            &__logo, &__links__item:first-child {
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity .5s ease;
+            }
+        }
+    }
+
+    &__container{
+        padding: 8px 36px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__logo{
+        margin: 5px;
+        max-width: 80px;
+        width: 100%;
+        transition: opacity .5s ease;
+    }
+
+    &__links {
+        display: flex;
+
+        &__item{
+            margin: 5px;
+            transition: opacity .5s ease;
+
+            .button {                
+                display: flex;
+                align-items: center;
+                margin: 0;
+                text-decoration: none;
+                padding: 8px 14px;
+                border: 1px solid;
+                height: 50px;
+
+
+                &--secudary {
+                    background-color: variaveis.$corDeFundoBotaoSecundario;
+                    border-color: variaveis.$corDeFundoBotaoSecundario;
+
+                    &:hover {
+                        background-color: lighten(variaveis.$corDeFundoBotaoSecundario, 3%);
+                    }
+                }
+
+                &--dark{
+                    background-color: rgba(variaveis.$corDeFundoBotaoDark, 0.8);
+                    border-color: #fff;
+
+                    &:hover {
+                        background-color: variaveis.$corTextoSecundario;
+                        color: variaveis.$corDeFundo;
+                    }
+                }
+            }
+        }
+    }
+}
